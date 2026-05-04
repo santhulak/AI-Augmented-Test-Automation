@@ -71,16 +71,21 @@ ai-automation-demo/
 ├── utils/
 
 │ ├── failureCollector.ts
+
 │ └── aiAnalyzer.ts
 
 ├── scripts/
+
 │ └── analyze.ts
 
 ├── public/
+
 │ ├── login.html
+
 │ └── secure.html
 
 ├── artifacts/
+
 │ └── failure-context.json
 
 ├── playwright.config.ts
@@ -99,15 +104,16 @@ ai-automation-demo/
 ```
 npm install
 ```
-2️⃣ Install Playwright browsers
-```bash
+### 2️⃣ Install Playwright browsers
+```
 npx playwright install
-
-▶️ How to Run the Demo
+```
+### ▶️ How to Run the Demo
 
 🔹 Step 1 — Run test (intentional failure)
-```bash
+```
 npm run test
+```
 👉 This will:
 
 Execute login test
@@ -117,8 +123,11 @@ Generate failure context
 🔹 Step 2 — View failure context
 
 Open:
+```
 artifacts/failure-context.json
+```
 Example:
+```
 {
   "error": "locator.click: Test timeout...",
   "locator": "#loginBtn",
@@ -131,58 +140,64 @@ Example:
   "url": "file:///...",
   "dom": "DOM not available"
 }
+```
 🔹 Step 3 — Run AI analysis
+```
 npm run analyze
-
+```
 Example output:
-
+```
 {
   "failure_type": "LOCATOR_CHANGED",
   "root_cause": "loginBtn does not exist. Actual ID is submitBtn",
   "suggested_fix": "#submitBtn"
 }
+```
 🔹 Step 4 — Fix the test
 
 Update locator:
-
+```
 await page.locator('#submitBtn').click();
-
+```
 OR use resilient locator:
-
+```
 await page.locator('button:has-text("Login")').click();
+```
+
 🔹 Step 5 — Re-run test
+```
 npm run test
-
+```
 👉 Result:
-
+```
 1 passed
-
-🎯 Demo Flow Summary
+```
+**🎯 Demo Flow Summary**
 Test fails due to locator issue
 Failure context is captured
 AI analyzes the failure
 Root cause and fix are identified
 Test is updated and passes
 
-💡 Key Takeaways
+**💡 Key Takeaways**
 Move from execution → intelligence
 Reduce debugging time
 Improve test stability
 Identify missing coverage
 Maintain human control
 
-⚠️ Notes
+**⚠️ Notes**
 This demo uses a mock AI analyzer for stability
 Can be extended with real AI APIs
 Fully offline-capable for reliable demos
 
-🔮 Future Enhancements
+**🔮 Future Enhancements**
 Real AI API integration
 Automated test suggestion system
 CI/CD integration
 Visual dashboard for insights
 
-👩‍💻 Author
+**👩‍💻 Author**
 
 Santhana Lakshmi
 AI-Augmented Test Automation Workshop
