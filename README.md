@@ -64,6 +64,7 @@ Human Validation & Fix
 ## 📁 Project Structure
 ai-automation-demo/
 ├── tests/
+
 │ └── login.test.ts
 ├── utils/
 │ ├── failureCollector.ts
@@ -90,13 +91,13 @@ ai-automation-demo/
 npm install
 
 2️⃣ Install Playwright browsers
-
+```bash
 npx playwright install
 
 ▶️ How to Run the Demo
 
 🔹 Step 1 — Run test (intentional failure)
-
+```bash
 npm run test
 👉 This will:
 
@@ -109,7 +110,12 @@ Generate failure context
 Open:
 artifacts/failure-context.json
 Example:
-
+{
+  "error": "locator.click: Test timeout...",
+  "locator": "#loginBtn",
+  "url": "file:///...",
+  "dom": "DOM not available"
+}
 {
   "error": "locator.click: Test timeout...",
   "locator": "#loginBtn",
