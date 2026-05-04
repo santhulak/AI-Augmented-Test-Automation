@@ -63,21 +63,30 @@ Human Validation & Fix
 
 ## 📁 Project Structure
 ai-automation-demo/
+
 ├── tests/
 
 │ └── login.test.ts
+
 ├── utils/
+
 │ ├── failureCollector.ts
 │ └── aiAnalyzer.ts
+
 ├── scripts/
 │ └── analyze.ts
+
 ├── public/
 │ ├── login.html
 │ └── secure.html
+
 ├── artifacts/
 │ └── failure-context.json
+
 ├── playwright.config.ts
+
 ├── package.json
+
 └── tsconfig.json
 
 
@@ -87,9 +96,9 @@ ai-automation-demo/
 
 ### 1️⃣ Install dependencies
 
-```bash
+```
 npm install
-
+```
 2️⃣ Install Playwright browsers
 ```bash
 npx playwright install
