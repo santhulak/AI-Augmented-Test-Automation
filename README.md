@@ -110,7 +110,7 @@ npx playwright install
 ```
 ### ▶️ How to Run the Demo
 
-🔹 Step 1 — Run test (intentional failure)
+**🔹 Step 1 — Run test (intentional failure)**
 ```
 npm run test
 ```
@@ -120,7 +120,7 @@ Execute login test
 Fail due to incorrect locator
 Generate failure context
 
-🔹 Step 2 — View failure context
+**🔹 Step 2 — View failure context**
 
 Open:
 ```
@@ -141,7 +141,7 @@ Example:
   "dom": "DOM not available"
 }
 ```
-🔹 Step 3 — Run AI analysis
+**🔹 Step 3 — Run AI analysis**
 ```
 npm run analyze
 ```
@@ -153,7 +153,7 @@ Example output:
   "suggested_fix": "#submitBtn"
 }
 ```
-🔹 Step 4 — Fix the test
+**🔹 Step 4 — Fix the test**
 
 Update locator:
 ```
@@ -164,7 +164,7 @@ OR use resilient locator:
 await page.locator('button:has-text("Login")').click();
 ```
 
-🔹 Step 5 — Re-run test
+**🔹 Step 5 — Re-run test**
 ```
 npm run test
 ```
@@ -173,6 +173,7 @@ npm run test
 1 passed
 ```
 **🎯 Demo Flow Summary**
+
 Test fails due to locator issue
 Failure context is captured
 AI analyzes the failure
@@ -180,6 +181,7 @@ Root cause and fix are identified
 Test is updated and passes
 
 **💡 Key Takeaways**
+
 Move from execution → intelligence
 Reduce debugging time
 Improve test stability
@@ -187,11 +189,13 @@ Identify missing coverage
 Maintain human control
 
 **⚠️ Notes**
+
 This demo uses a mock AI analyzer for stability
 Can be extended with real AI APIs
 Fully offline-capable for reliable demos
 
 **🔮 Future Enhancements**
+
 Real AI API integration
 Automated test suggestion system
 CI/CD integration
